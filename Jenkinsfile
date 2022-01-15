@@ -20,7 +20,7 @@ pipeline {
                 steps{
                     sh 'docker --version'
                     sh 'docker build -t app:1 .'
-                    sh '$(aws ecr get-login --no-include-email)'
+                    #sh '$(aws ecr get-login --no-include-email)'
                     sh 'docker tag app:1 katapeter/second:tagname'
                     sh 'docker push katapeter/second:tagname'
                      }
