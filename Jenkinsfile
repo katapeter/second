@@ -20,8 +20,8 @@ pipeline {
                 steps{
                     sh 'docker --version'
                     sh 'docker build -t app:1 .'
-                    sh 'docker tag app:1 katapeter/second'
-                    sh 'docker push katapeter/second'
+                    sh 'docker tag app:1 katapeter/second:1'
+                    sh 'docker push katapeter/second:1'
                      }
             }
     }
