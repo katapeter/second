@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('git pull'){
             steps{
-                git 'https://gitlab.com/jagarlamudirajesh34/kubernetes_we.git'
+                git 'https://github.com/katapeter/second.git'
             }
         }
         stage('mvn install'){
