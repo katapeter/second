@@ -1,6 +1,6 @@
 FROM tomcat:8.0
 
-MAINTAINER 1010101 rajesh@srishsoft.com
+MAINTAINER 1010101 peter.skzr@gmail.com
 
 COPY target/mvn-hello-world.war /usr/local/tomcat/webapps/
 
