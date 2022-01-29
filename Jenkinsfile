@@ -39,7 +39,9 @@ pipeline {
 		dir ("./samplewar") {
            sh "mvn clean package "
 		}
-   }
+          }
    }
  }
+}
 }	
+	
