@@ -23,21 +23,14 @@ pipeline {
    //agent { label 'Dev' }
    when {environment name: 'BUILDME', value: 'yes'}
    steps {
-     script {
-	    if (params.UNITTEST) {
-		  unitstr = ""
-		} else {
-		  unitstr = "-Dmaven.test.skip=true"
-		}
-	
-		echo "Building Jar Component ..."
-		dir ("./samplejar") {
-		   sh "mvn clean package ${unitstr}"
+     echo "Building Jar Component ..."
+	dir ("./samplejar") {
+	sh "mvn clean package ${unitstr}"
 		}
 
-		echo "Building War Component ..."
-		dir ("./samplewar") {
-           sh "mvn clean package "
+	echo "Building War Component ..."
+	dir ("./samplewar") {
+        sh "mvn clean package "
 		}
           }
    }
