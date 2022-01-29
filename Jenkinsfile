@@ -1,17 +1,17 @@
 pipeline {
-  agent none
+  agent any
   stages
  {
   stage('Checkout')
   {
-       agent { label 'demo' }
+       //agent { label 'demo' }
        steps { 
           git branch: 'master', url: 'https://github.com/katapeter/second.git'
        }
   }
  stage('PreCheck')
   {
-  agent { label 'demo' }
+  //agent { label 'demo' }
    when { 
      anyOf {
            changeset "samplejar/**"
@@ -26,7 +26,7 @@ pipeline {
   }
   stage('Build Artifacts')
   {
-   agent { label 'demo' }
+   //agent { label 'demo' }
    when {environment name: 'BUILDME', value: 'yes'}
    steps {
 	   echo "hi"
