@@ -1,17 +1,17 @@
 pipeline {
-  agent any
+  agent none
   stages
  {
   stage('Checkout')
   {
-       //agent { label 'demo' }
-       steps { 
+    agent { label 'Dev' }
+    steps { 
           git branch: 'master', url: 'https://github.com/katapeter/second.git'
        }
   }
  stage('PreCheck')
   {
-  //agent { label 'demo' }
+  agent { label 'Dev' }
  steps {
        script {
           env.BUILDME = "yes" // Set env variable to enable further Build Stages
@@ -20,7 +20,7 @@ pipeline {
   }
   stage('Build Artifacts')
   {
-   //agent { label 'demo' }
+   agent { label 'Dev' }
    when {environment name: 'BUILDME', value: 'yes'}
    steps {
      script {
